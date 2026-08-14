@@ -7,6 +7,8 @@
 
 ---
 
+
+
 # 1. How do you optimize a Stored Procedure?
 
 ## Interview Answer
@@ -157,6 +159,53 @@ Answer:
 
 **Plan → Index → Query → Statistics → Parameters → Measure**
 
+What is a Stored Procedure?
+Definition
+
+A Stored Procedure is a precompiled collection of one or more SQL statements that is stored as a database object inside SQL Server and can be executed whenever required.
+
+It can accept input parameters, perform operations such as SELECT, INSERT, UPDATE, and DELETE, contain business logic, use conditions/loops, handle transactions and errors, and return result sets or output parameters.
+
+Simple Explanation
+
+Think of a stored procedure like a method/function in C#, but it is stored and executed inside the SQL Server database.
+
+For example, instead of writing this query again and again:
+
+SELECT *
+FROM Employees
+WHERE Department = 'IT';
+
+we can create a stored procedure:
+
+CREATE PROCEDURE GetEmployeesByDepartment
+    @Department NVARCHAR(50)
+AS
+BEGIN
+
+
+    SELECT *
+    FROM Employees
+    WHERE Department = @Department;
+
+
+END;
+
+Now we can execute it whenever we need it:
+
+EXEC GetEmployeesByDepartment 'IT';
+
+So:
+
+Application
+     ↓
+EXEC Stored Procedure
+     ↓
+SQL Server
+     ↓
+Execute SQL statements
+     ↓
+Return result
 ---
 
 # 2. How do you measure Stored Procedure execution time?
