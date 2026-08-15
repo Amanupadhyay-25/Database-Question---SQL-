@@ -1,5 +1,37 @@
 # SQL Server Interview Questions
 
+#  Approach to answer SQL Question 
+
+               SQL QUESTION
+                      │
+          ┌───────────┴───────────┐
+          ↓                       ↓
+     CONCEPTUAL                 QUERY
+          │                       │
+     Definition              Understand
+          ↓                   Requirement
+        Why?                      ↓
+          ↓                  Edge Cases
+       Example                    ↓
+          ↓                  Choose Approach
+   Trade-off / Point              ↓
+          │                    Write SQL
+          │                       ↓
+          │                  Explain SQL
+          │                       ↓
+          │                  Complexity/
+          │                  Performance
+          │
+          └───────────┬───────────┘
+                      ↓
+                 FOLLOW-UP
+                      ↓
+               Why / Why Not?
+                      ↓
+                 Real Example
+                      ↓
+                  Trade-off
+
  1. What is a Stored Procedure?
  2. How do you optimize a Stored Procedure?
  3. How do you measure Stored Procedure execution time?
