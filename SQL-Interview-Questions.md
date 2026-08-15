@@ -927,7 +927,24 @@ It is mainly a way to define a named query expression for the following statemen
 # 13. Temp Table vs Table Variable
 
 ## Temp Table
+ A database table that exists temporarily on the database server and temp table are very useful when to store temporary data . 
 
+ Temporary table are created inside the tempdb ( system database) .
+ 
+
+ Temp table are of two types :-
+
+ > 1. Local Temporary Table
+
+  It is available only within the session/connection in which it is created and is automatically deleted when the session ends.( Query Window)
+
+  IF Temporary Table is created inside the SP (Stored Procedure) then it gets dropped automatically when Stored Procedure Completes its execution.
+
+  We can create the local temporary table with same name in different connections.
+  
+ > 2. Global Temporary Table
+
+> Syntax 
 ```sql
 CREATE TABLE #Employees
 (
