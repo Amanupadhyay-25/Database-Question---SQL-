@@ -587,8 +587,21 @@ EXEC GetEmployeesByDepartment 'IT';
 ---
 
 # 7. Find the 5th Highest Salary
+## Approach 1 — SQL Subquery
+If duplicate salaries should be ignored while finding the 5th highest salary:
+```sql
+SELECT TOP 1 Salary
+FROM
+(
+    SELECT DISTINCT TOP 5 Salary
+    FROM Employees
+    ORDER BY Salary DESC
+) Result
+ORDER BY Salary ASC;
 
-## Approach 1 — DENSE_RANK
+```
+
+## Approach 2 — DENSE_RANK
 
 If duplicate salaries should have the same rank:
 
